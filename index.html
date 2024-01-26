@@ -36,20 +36,24 @@
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
+            cursor: pointer;
         }
         .navbar a:hover {
             background-color: #ddd;
             color: black;
         }
+        .content {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <div class="navbar">
-        <a href="#cv">简历</a>
-        <a href="#blog">博客</a>
+        <a onclick="showSection('cv')">简历</a>
+        <a onclick="showSection('blog')">博客</a>
     </div>
 
-    <div class="container" id="cv">
+    <div class="container content" id="cv">
         <header>
             <h1>Chuan Qin 秦川</h1>
             <img src="qinchuan.jpg" alt="个人照片" style="max-width:15%; height:auto;">
@@ -83,8 +87,18 @@
         </footer>
     </div>
 
-    <div class="container" id="blog">
-        <!-- 博客内容可以在这里添加 -->
+    <div class="container content" id="blog">
+        <!-- 博客内容 -->
     </div>
+
+    <script>
+        function showSection(sectionId) {
+            var sections = document.getElementsByClassName('content');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = 'none';
+            }
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
 </body>
 </html>
