@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Chuan Qin</title>
+    <title>Chuan Qin 秦川</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -25,14 +25,34 @@
         .publications li, .conferences li {
             margin-bottom: 0.5em;
         }
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="navbar">
+        <a href="#cv">简历</a>
+        <a href="#blog">博客</a>
+    </div>
+
+    <div class="container" id="cv">
         <header>
             <h1>Chuan Qin 秦川</h1>
             <img src="qinchuan.jpg" alt="个人照片" style="max-width:15%; height:auto;">
-
             <p>兰州大学博士在读</p>
         </header>
 
@@ -58,11 +78,13 @@
             <p>电子邮件: qinchuan8@foxmail.com</p>
         </section>
 
-        <a href="https://visitorbadge.io/status?path=https%3A%2F%2Fchuanqin8.github.io%2F"><img src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Fchuanqin8.github.io%2F&label=Visitors%20since%20January%202%2C%202024&countColor=%23ff8a65&style=flat&labelStyle=none" /></a>
-        
         <footer>
             <p>&copy; 2024 秦川</p>
         </footer>
+    </div>
+
+    <div class="container" id="blog">
+        <!-- 博客内容可以在这里添加 -->
     </div>
 </body>
 </html>
