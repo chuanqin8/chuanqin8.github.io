@@ -8,6 +8,50 @@
     <!-- 每个页面独有的样式可以单独添加 -->
     <style>
         /* 当前页面特有样式 */
+        .marathon-card {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .marathon-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .marathon-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .marathon-title {
+            font-size: 1.4em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .marathon-meta {
+            color: #7f8c8d;
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            .marathon-card {
+                grid-template-columns: 1fr;
+            }
+            
+            .marathon-image {
+                height: 180px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -22,7 +66,48 @@
     <h1>运动成就</h1>
 
     <section id="sports">
-        <h2>运动经历</h2>
+        <h2>马拉松参赛记录</h2>
+        
+        <!-- 北京马拉松 -->
+        <div class="marathon-card">
+            <img src="images/sport/beijing_marathon.jpg" 
+                 alt="2023北京马拉松参赛照片" 
+                 class="marathon-image">
+            <div class="marathon-details">
+                <h3 class="marathon-title">2023北京马拉松</h3>
+                <p class="marathon-meta">
+                    <strong>比赛时间:</strong> 2023年11月6日<br>
+                    <strong>完赛成绩:</strong> 3小时28分45秒<br>
+                    <strong>参赛号:</strong> A12345
+                </p>
+                <p class="marathon-meta">
+                    <strong>分段成绩:</strong><br>
+                    5公里 - 24'35"<br>
+                    半程 - 1:43'12"<br>
+                    全程 - 3:28'45"
+                </p>
+            </div>
+        </div>
+
+        <!-- 上海马拉松 -->
+        <div class="marathon-card">
+            <img src="images/sport/shanghai_marathon.jpg" 
+                 alt="2022上海马拉松冲线瞬间" 
+                 class="marathon-image">
+            <div class="marathon-details">
+                <h3 class="marathon-title">2022上海马拉松</h3>
+                <p class="marathon-meta">
+                    <strong>比赛时间:</strong> 2022年12月4日<br>
+                    <strong>完赛成绩:</strong> 3小时35分12秒<br>
+                    <strong>参赛号:</strong> B67890
+                </p>
+                <p class="marathon-meta">
+                    <strong>赛事亮点:</strong><br>
+                    首次雨中全程马拉松<br>
+                    年龄组排名第15名
+                </p>
+            </div>
+        </div>
         <!-- 运动相关内容 -->
     </section>
 
