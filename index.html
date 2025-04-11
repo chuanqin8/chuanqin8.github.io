@@ -4,121 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chuan Qin 秦川</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 每个页面独有的样式可以单独添加 -->
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        }
-
-        body {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        nav {
-            margin-bottom: 40px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eee;
-        }
-
-        nav a {
-            margin-right: 20px;
-            text-decoration: none;
-            color: #666;
-        }
-
-        nav a[href="index.html"] {
+        /* 当前页面特有样式 */
+        nav a[href="research.html"] { /* research.html独有 */
             color: #3498db;
             font-weight: bold;
-            border-bottom: 2px solid #3498db;
-        }
-
-        /* 导航栏间距调整 */
-        nav a {
-            margin-right: 25px; /* 增大间距 */
-            padding: 5px 0;
-        }
-        
-        /* PDF链接特殊样式 */
-        nav a[href$=".pdf"] {
-            position: relative;
-            padding-right: 18px;
-        }
-        
-        nav a[href$=".pdf"]::after {
-            content: "↗";
-            position: absolute;
-            right: 0;
-            top: 1px;
-            font-size: 0.8em;
-        }
-
-        h1 {
-            margin-bottom: 30px;
-            color: #2c3e50;
-        }
-
-        h2 {
-            margin: 40px 0 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #eee;
-            color: #34495e;
-        }
-
-        .news-item {
-            margin: 15px 0;
-            padding-left: 20px;
-            border-left: 3px solid #3498db;
-        }
-
-        .paper {
-            margin: 25px 0;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-        }
-
-        .paper-title {
-            font-size: 1.1em;
-            font-weight: 600;
-            color: #2c3e50;
-        }
-
-        .authors {
-            color: #7f8c8d;
-            margin: 8px 0;
-        }
-
-        .venue {
-            color: #3498db;
-            font-style: italic;
-        }
-
-        .badges {
-            margin-top: 10px;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 4px 8px;
-            margin-right: 8px;
-            background: #e8f4fd;
-            border-radius: 4px;
-            font-size: 0.9em;
-            color: #2980b9;
-        }
-
-        footer {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            text-align: center;
-            color: #7f8c8d;
         }
     </style>
 </head>
