@@ -38,6 +38,26 @@
             border-bottom: 2px solid #3498db;
         }
 
+        /* 导航栏间距调整 */
+        nav a {
+            margin-right: 25px; /* 增大间距 */
+            padding: 5px 0;
+        }
+        
+        /* PDF链接特殊样式 */
+        nav a[href$=".pdf"] {
+            position: relative;
+            padding-right: 18px;
+        }
+        
+        nav a[href$=".pdf"]::after {
+            content: "↗";
+            position: absolute;
+            right: 0;
+            top: 1px;
+            font-size: 0.8em;
+        }
+
         h1 {
             margin-bottom: 30px;
             color: #2c3e50;
@@ -107,7 +127,7 @@
         <a href="index.html">Home</a>
         <a href="research.html">Research</a>
         <a href="sport.html">Sport</a>
-        <a href="cv.pdf" target="_blank">CV</a> <!-- 新增此行 -->
+        <a href="cv_qinchuan.pdf" target="_blank">CV</a> <!-- 新增此行 -->
         <a href="mailto:qinchuan8@foxmail.com" style="float: right;">Email</a>
     </nav>
 
