@@ -18,10 +18,14 @@
         .profile-photo {
             width: 160px;
             height: 160px;
-            border-radius: 50%;
-            border: 4px solid #3498db;
+            /* 移除圆角相关代码 */
+            border-radius: 0; 
+            border: none;      /* 移除边框 */
             object-fit: cover;
+            /* 新增阴影效果 */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
+
 
         .paper {
             display: grid;
@@ -75,10 +79,22 @@
             <div>
                 <div class="paper-title">Long short-term memory with activation on gradient</div>
                 <div class="authors">Chuan Qin, Liangming Chen, Zangtai Cai, Mei Liu, Long Jin</div>
-                <div class="venue">Neural Networks</div>
+                <div class="venue">Neural Networks (NN)</div>
                 <div class="badges">
                     <a href="https://www.sciencedirect.com/science/article/pii/S0893608023002125" class="badge" target="_blank">Paper</a>
                     <a href="https://github.com/chuanqin8/ACT-In-NLP" class="badge" target="_blank">Code</a>
+                </div>
+            </div>
+        </div>
+        <div class="paper">
+            <img src="images/paper2.jpg" alt="Video Generation Demo" class="paper-image">
+            <div>
+                <div class="paper-title">Adaptive Gradient Activation for Federated Learning on Consumer Electronic Devices</div>
+                <div class="authors">Chuan Qin, Mei Liu, Long Jin</div>
+                <div class="venue">IEEE Transactions on Consumer Electronics (TCE)</div>
+                <div class="badges">
+                    <a href="https://ieeexplore.ieee.org/abstract/document/10874179/" class="badge" target="_blank">Paper</a>
+<!--                     <a href="https://github.com/chuanqin8/ACT-In-NLP" class="badge" target="_blank">Code</a> -->
                 </div>
             </div>
         </div>
