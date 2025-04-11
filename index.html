@@ -1,104 +1,240 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <title>Chuan Qin 秦川</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>秦川 (Chuan Qin) 的个人主页</title> <!-- ***** 修改成你的名字 ***** -->
     <style>
         body {
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            width: 80%;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
             margin: 0 auto;
+            max-width: 900px; /* 内容最大宽度 */
+            padding: 20px;
+            color: #333;
         }
-        header, footer {
+        header, section {
+            margin-bottom: 40px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50; /* 深蓝色标题 */
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        h1 {
             text-align: center;
-            padding: 1em 0;
+            border-bottom: none;
         }
-        .profile-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 75px;
+        #about {
+            display: flex;
+            align-items: flex-start; /* 垂直方向顶部对齐 */
+            gap: 20px; /* 图片和文字之间的间距 */
         }
-        section {
-            margin-bottom: 2em;
+        #about img {
+            max-width: 150px; /* 头像最大宽度 */
+            height: auto;
+            border-radius: 50%; /* 圆形头像 */
+            border: 2px solid #eee;
         }
-        .publications li, .conferences li {
-            margin-bottom: 0.5em;
+        #about .info {
+            flex: 1; /* 让文字部分占据剩余空间 */
         }
-        .navbar {
-            overflow: hidden;
-            background-color: #333;
+        .paper {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #eee; /* 论文之间的分隔线 */
+            display: flex; /* 让图片和文字并排 */
+            gap: 15px; /* 图片和文字间距 */
+            align-items: flex-start;
         }
-        .navbar a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
+        .paper img {
+            max-width: 180px; /* 论文图片宽度 */
+            height: auto;
+            border: 1px solid #ddd;
+        }
+        .paper .details {
+            flex: 1;
+        }
+        .paper h3 {
+            margin-top: 0;
+            font-size: 1.1em;
+            border-bottom: none;
+        }
+        .paper p {
+            margin: 5px 0;
+            font-size: 0.95em;
+        }
+        .paper .links a {
+            margin-right: 10px;
             text-decoration: none;
-            cursor: pointer;
+            color: #3498db; /* 链接颜色 */
+            font-weight: bold;
         }
-        .navbar a:hover {
-            background-color: #ddd;
-            color: black;
+        .paper .links a:hover {
+            text-decoration: underline;
         }
-        .content {
-            display: none;
+        #sport h3 {
+            margin-top: 25px;
+            border-bottom: none;
+            color: #16a085; /* 运动部分的标题颜色 */
+        }
+        #visitor-stats {
+            text-align: center; /* 让地图居中 */
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #777;
+        }
+        /* 响应式设计：小屏幕时头像和信息垂直排列 */
+        @media (max-width: 600px) {
+            #about {
+                flex-direction: column; /* 垂直排列 */
+                align-items: center; /* 居中对齐 */
+                text-align: center;
+            }
+            .paper {
+                flex-direction: column; /* 论文图片和描述垂直排列 */
+                align-items: center;
+            }
+             .paper img {
+                max-width: 80%; /* 移动端图片稍大些 */
+            }
         }
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <a onclick="showSection('cv')">简历</a>
-        <a onclick="showSection('blog')">博客</a>
-    </div>
 
-    <div class="container content" id="cv">
-        <header>
-            <h1>Chuan Qin 秦川</h1>
-            <img src="qinchuan.jpg" alt="个人照片" style="max-width:15%; height:auto;">
-            <p>兰州大学博士在读</p>
-        </header>
+    <header>
+        <h1>秦川 (Chuan Qin)</h1> <!-- ***** 修改成你的名字 ***** -->
+        <!-- 你可以在这里添加你的职位和机构 -->
+        <p style="text-align: center; font-style: italic;">[你的职位, 你的单位]</p>
+        <p style="text-align: center;">
+           <a href="mailto:[qinchuan8@foxmail.com]">Email</a> |
+           <a href="[你的Google Scholar链接]" target="_blank">Google Scholar</a> |
+           <a href="https://github.com/chuanqin8" target="_blank">GitHub</a> |
+           <a href="[你的CV链接 (PDF)]" target="_blank">CV</a>
+           <!-- ***** 替换上面的链接和文本 ***** -->
+        </p>
+    </header>
 
-        <section>
-            <h2>关于我</h2>
-            <p>一名喜欢科研、运动、阅读、烹饪和音乐的科研僧！</p>
-        </section>
+    <section id="about">
+        <!-- ***** 确保你的头像文件名为 profile.jpg 并已上传到仓库根目录 ***** -->
+        <!-- ***** 如果放在 images 文件夹，路径改为 images/profile.jpg ***** -->
+        <img src="profile.jpg" alt="Chuan Qin's Profile Photo">
+        <div class="info">
+            <h2>个人简介 (Biography)</h2>
+            <p>
+                <!-- ***** 在这里写你的个人简介 ***** -->
+                大家好，我是秦川。我是一名专注于 [你的研究领域] 的科研人员。我对 [你感兴趣的具体方向1] 和 [你感兴趣的具体方向2] 特别感兴趣。
+                [可以添加更多关于你的研究兴趣、目标等的描述。]
+            </p>
 
-        <section>
-            <h2>研究兴趣</h2>
-            <p>神经网络泛化性和鲁棒性</p>
-        </section>
-
-        <section>
-            <h2>发表论文</h2>
-            <ul class="publications">
-                <li>Long short-term memory with activation on gradient - <em>Neural Networks</em>, 2023</li>
+            <h2>学习经历 (Education)</h2>
+            <ul>
+                <!-- ***** 添加或修改你的学习经历 ***** -->
+                <li><strong>[你的学位]</strong>, [你的专业], [你的学校], [城市, 国家] ([开始年份] - [结束年份])</li>
+                <li><strong>[你的学位]</strong>, [你的专业], [你的学校], [城市, 国家] ([开始年份] - [结束年份])</li>
+                <!-- 可以继续添加更多经历 -->
             </ul>
-        </section>
+        </div>
+    </section>
 
-        <section>
-            <h2>联系方式</h2>
-            <p>电子邮件: qinchuan8@foxmail.com</p>
-        </section>
+    <section id="research">
+        <h2>研究成果 (Research)</h2>
 
-        <footer>
-            <p>&copy; 2024 秦川</p>
-        </footer>
-    </div>
+        <!-- ***** 这是第一篇论文的示例 ***** -->
+        <article class="paper">
+            <!-- ***** 论文示意图，建议放在 images 文件夹 ***** -->
+            <!-- ***** 如果没有图片，可以删除下面这行 <img> 标签 ***** -->
+            <img src="images/paper1_fig.png" alt="示意图: Paper 1 Title">
+            <div class="details">
+                <!-- ***** 修改论文标题 ***** -->
+                <h3>Paper Title 1: An Interesting Finding</h3>
+                <!-- ***** 修改作者列表 ***** -->
+                <p><strong>Chuan Qin</strong>, Author Two, Author Three</p>
+                <!-- ***** 修改发表期刊/会议和年份 ***** -->
+                <p><em>Journal or Conference Name</em>, 2023</p>
+                <!-- ***** 修改或添加链接 ***** -->
+                <p class="links">
+                    <a href="[论文链接或DOI]" target="_blank">[Paper Link]</a>
+                    <a href="[代码链接 (GitHub等)]" target="_blank">[Code]</a>
+                    <!-- <a href="[项目主页链接]" target="_blank">[Project Page]</a> -->
+                    <!-- <a href="[Slides链接]" target="_blank">[Slides]</a> -->
+                </p>
+                <!-- 可选：简短摘要 -->
+                <!-- <p>Short abstract or key contribution here...</p> -->
+            </div>
+        </article>
+        <!-- ***** 你可以复制上面的 <article class="paper">...</article> 块来添加更多论文 ***** -->
 
-    <div class="container content" id="blog">
-        <!-- 博客内容 -->
-    </div>
+        <!-- ***** 这是第二篇论文的示例 ***** -->
+        <article class="paper">
+             <!-- ***** 如果没有图片，可以删除下面这行 <img> 标签 ***** -->
+            <img src="images/paper2_fig.png" alt="示意图: Paper 2 Title">
+            <div class="details">
+                <h3>Paper Title 2: Another Important Result</h3>
+                <p>Author One, <strong>Chuan Qin</strong>, Author Three</p>
+                <p><em>Another Journal or Conference</em>, 2022</p>
+                <p class="links">
+                    <a href="[论文链接或DOI]" target="_blank">[Paper Link]</a>
+                    <!-- 如果没有代码链接，可以删除下面这行 -->
+                    <a href="[代码链接]" target="_blank">[Code]</a>
+                </p>
+            </div>
+        </article>
 
-    <script>
-        function showSection(sectionId) {
-            var sections = document.getElementsByClassName('content');
-            for (var i = 0; i < sections.length; i++) {
-                sections[i].style.display = 'none';
-            }
-            document.getElementById(sectionId).style.display = 'block';
-        }
-    </script>
+        <!-- ***** 在这里继续添加更多论文... ***** -->
+
+    </section>
+
+    <section id="sport">
+        <h2>运动爱好 (Sport)</h2>
+        <p>
+            <!-- ***** 在这里写一些关于你运动爱好的总体介绍 ***** -->
+            除了科研，我也热爱运动，它帮助我保持健康和活力。
+        </p>
+
+        <h3>跑步 (Running)</h3>
+        <p>
+            <!-- ***** 在这里写关于你跑步的描述 ***** -->
+            我喜欢在 [你常跑步的地方，如公园、街道] 跑步。最近的目标是 [你的跑步目标，如完成半马、提高速度等]。
+            <!-- 你可以考虑添加 Strava 链接或嵌入小部件 (如果 Strava 提供) -->
+        </p>
+
+        <h3>游泳 (Swimming)</h3>
+        <p>
+            <!-- ***** 在这里写关于你游泳的描述 ***** -->
+            游泳是放松的好方式。我通常游 [你喜欢的泳姿，如自由泳、蛙泳]。
+        </p>
+
+        <h3>骑行 (Cycling)</h3>
+        <p>
+            <!-- ***** 在这里写关于你骑行的描述 ***** -->
+            周末天气好的时候，我喜欢骑车去探索 [你骑行的区域或路线]。
+        </p>
+    </section>
+
+    <section id="visitor-stats">
+        <h2>访客统计 (Visitor Statistics)</h2>
+        <p>来自世界各地的访客：</p>
+        <!-- ***** 下面是 RevolverMaps 的示例代码 ***** -->
+        <!-- ***** 你需要去 https://www.revolvermaps.com/ 生成你自己的代码并替换掉下面的部分 ***** -->
+        <!-- ***** 选择 2D map widget 并根据需要调整颜色和大小 ***** -->
+        <!-- Start of RevolverMaps Code -->
+        <script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5qx3zxxxxxx&m=7&c=ff0000&cr1=ffffff&f=arial&l=0" async="async"></script>
+        <!-- End of RevolverMaps Code -->
+        <!-- ***** 注意：上面的 i=... 参数需要替换成你自己的 ID ***** -->
+        <!-- ***** c=ff0000 是标记颜色(红色), cr1=ffffff 是背景色(白色) ***** -->
+        <!-- ***** 你也可以考虑 ClustrMaps: https://clustrmaps.com/ ***** -->
+    </section>
+
+    <footer>
+        <!-- ***** 修改年份和名字 ***** -->
+        <p>© 2024 Chuan Qin. All rights reserved.</p>
+        <p>Powered by GitHub Pages.</p>
+    </footer>
+
 </body>
 </html>
