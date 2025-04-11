@@ -1,314 +1,162 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- ***** 修改成你的名字 ***** -->
-    <title>秦川 (Chuan Qin) - 个人主页</title>
+    <title>Ailing Zeng 曾爱玲</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* 优先使用 Windows 字体，类似参考网站 */
-            line-height: 1.7; /* 增加行高，提高可读性 */
+            max-width: 1000px;
             margin: 0 auto;
-            max-width: 960px; /* 页面内容最大宽度 */
-            padding: 25px;
-            color: #333;
-            background-color: #fff; /* 纯白背景 */
-        }
-        a {
-            color: #007bff; /* 蓝色链接 */
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        h1, h2, h3 {
-            color: #333; /* 深灰色标题 */
-            margin-top: 1.5em;
-            margin-bottom: 0.8em;
-            border-bottom: 1px solid #eee; /* 标题下细线 */
-            padding-bottom: 6px;
-        }
-        h1 {
-            font-size: 2.2em; /* 主标题大一些 */
-            text-align: left; /* 标题左对齐 */
-            border-bottom: none; /* 主标题不要下划线 */
-            margin-bottom: 5px;
-        }
-        h2 {
-            font-size: 1.6em;
-        }
-        h3 {
-            font-size: 1.2em;
-            border-bottom: none; /* 论文标题等 H3 不要下划线 */
-            margin-bottom: 0.5em;
-        }
-        header p {
-            margin: 2px 0; /* 头部段落间距小 */
-            font-size: 0.95em;
-            color: #555;
-        }
-        header .contact-links a {
-            margin-right: 15px; /* 头部链接间距 */
-        }
-
-        #about {
-            display: flex;
-            flex-wrap: wrap; /* 在小屏幕允许换行 */
-            align-items: flex-start; /* 顶部对齐 */
-            gap: 30px; /* 图片和文字间距 */
-            margin-top: 30px; /* 名字下方留白 */
-            background-color: #f8f9fa; /* 关于部分浅灰色背景 */
             padding: 20px;
-            border-radius: 8px; /* 圆角 */
+            line-height: 1.6;
+            color: #333;
         }
-        #about img.profile-pic {
-            max-width: 180px; /* 头像尺寸 */
-            height: auto;
-            border-radius: 50%; /* 圆形头像 */
-            border: 4px solid #fff; /* 白色边框 */
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 轻微阴影 */
-        }
-        #about .info {
-            flex: 1; /* 占据剩余空间 */
-            min-width: 300px; /* 防止文字区域过窄 */
-        }
-        #about .info h3 { margin-top: 0; } /* "关于"区域里的 H3 不加顶部外边距 */
 
-        #research .paper {
-            display: flex;
-            gap: 20px; /* 图片和详情间距 */
-            margin-bottom: 35px; /* 论文条目间距 */
-            padding-bottom: 20px; /* 底部内边距 */
-            border-bottom: 1px solid #eee; /* 论文间分隔线 */
-            align-items: flex-start; /* 顶部对齐 */
+        nav {
+            margin-bottom: 40px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
         }
-         #research .paper:last-child {
-             border-bottom: none; /* 最后一个条目不要分隔线 */
-         }
-        #research .paper img.thumbnail {
-            width: 200px; /* 论文缩略图宽度 */
-            height: auto; /* 高度自适应 */
-            object-fit: cover; /* 保持比例，裁剪多余 */
-            border: 1px solid #ddd; /* 图片边框 */
-            flex-shrink: 0; /* 防止图片被压缩 */
-        }
-        #research .paper .details {
-            flex: 1; /* 占据剩余空间 */
-        }
-        #research .paper .details h3 {
-            margin-top: 0; /* 论文标题顶部无外边距 */
-            margin-bottom: 8px; /* 标题和作者间距 */
-            font-size: 1.15em;
-            line-height: 1.3;
-        }
-        #research .paper .details p {
-            margin: 4px 0; /* 作者、期刊等段落间距 */
-            font-size: 0.9em; /* 字体稍小 */
-            color: #555; /* 稍浅的文字颜色 */
-        }
-        #research .paper .details p.authors strong {
-            color: #000; /* 加黑自己的名字 */
-        }
-        #research .paper .details p.venue {
-            font-style: italic; /* 期刊/会议斜体 */
-        }
-        #research .paper .details .links a {
-            display: inline-block; /* 让链接块状化，方便点击 */
-            margin-right: 10px;
-            margin-top: 5px;
-            font-weight: bold;
-            font-size: 0.9em;
-            padding: 2px 6px; /* 轻微内边距 */
-            border: 1px solid #ddd; /* 边框 */
-            border-radius: 4px; /* 圆角 */
-            background-color: #f8f9fa; /* 浅灰背景 */
-        }
-        #research .paper .details .links a:hover {
-            background-color: #e9ecef; /* 悬停背景变深 */
+
+        nav a {
+            margin-right: 20px;
             text-decoration: none;
-            border-color: #ccc;
+            color: #666;
         }
 
-        #sport h3 {
-            margin-top: 1.8em;
-            border-bottom: 1px dashed #ddd; /* 运动子标题用虚线 */
-            font-size: 1.3em; /* 运动标题大一点 */
-            color: #1a73e8; /* 蓝色 */
-        }
-        #sport p {
-            margin-left: 10px;
+        h1 {
+            margin-bottom: 30px;
+            color: #2c3e50;
         }
 
-        #visitor-stats {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            text-align: center; /* 居中 */
+        h2 {
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            color: #34495e;
         }
-         #visitor-stats h2 {
-            border-bottom: none; /* 统计标题不要下划线 */
-         }
+
+        .news-item {
+            margin: 15px 0;
+            padding-left: 20px;
+            border-left: 3px solid #3498db;
+        }
+
+        .paper {
+            margin: 25px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .paper-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .authors {
+            color: #7f8c8d;
+            margin: 8px 0;
+        }
+
+        .venue {
+            color: #3498db;
+            font-style: italic;
+        }
+
+        .badges {
+            margin-top: 10px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            margin-right: 8px;
+            background: #e8f4fd;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #2980b9;
+        }
 
         footer {
-            text-align: center;
             margin-top: 50px;
-            font-size: 0.85em;
-            color: #888;
             padding-top: 20px;
             border-top: 1px solid #eee;
-        }
-
-        /* 响应式设计：屏幕较窄时 */
-        @media (max-width: 768px) {
-            body { padding: 15px; }
-            #about { flex-direction: column; align-items: center; text-align: center; } /* 关于部分堆叠 */
-            #about img.profile-pic { max-width: 150px; }
-            #research .paper { flex-direction: column; align-items: center; } /* 论文条目堆叠 */
-            #research .paper img.thumbnail { width: 80%; max-width: 300px; margin-bottom: 15px; } /* 移动端图片宽度 */
-            #research .paper .details { text-align: center; } /* 文本也居中 */
-             #research .paper .details .links { text-align: center;} /* 链接也居中 */
+            text-align: center;
+            color: #7f8c8d;
         }
     </style>
 </head>
 <body>
+    <nav>
+        <a href="https://chuanqin8.github.io/">Home</a>
+        <a href="mailto:your-email@example.com">Email</a>
+    </nav>
 
-    <header>
-        <!-- ***** 1. 修改你的名字 ***** -->
-        <h1>秦川 (Chuan Qin)</h1>
-        <!-- ***** 2. 修改你的职位和单位 ***** -->
-        <p>[你的职位/身份, 例如：博士生 / Researcher / Postdoctoral Fellow]</p>
-        <p>[你的系/学院/实验室, 你的大学/机构]</p>
-        <!-- ***** 3. 修改你的邮箱地址 ***** -->
-        <p>邮箱: <a href="mailto:[你的邮箱地址]">[你的邮箱地址]</a></p>
-        <!-- ***** 4. 修改或添加你的在线链接 ***** -->
-        <p class="contact-links">
-            <a href="[你的 Google Scholar 链接]" target="_blank">Google Scholar</a> |
-            <a href="https://github.com/chuanqin8" target="_blank">GitHub</a> |
-            <!-- <a href="[你的 Semantic Scholar 链接]" target="_blank">Semantic Scholar</a> | -->
-            <!-- <a href="[你的 LinkedIn 链接]" target="_blank">LinkedIn</a> | -->
-            <a href="[指向你CV文件的链接 (例如 PDF)]" target="_blank">CV</a>
-        </p>
-    </header>
+    <h1>Ailing Zeng 曾爱玲</h1>
 
-    <section id="about">
-        <!-- ***** 5. 确认头像文件名及路径正确 (应在 images/ 文件夹下) ***** -->
-        <img src="images/profile.jpg" alt="Chuan Qin Profile Photo" class="profile-pic">
-        <div class="info">
-            <h3>个人简介 (Biography)</h3>
-            <!-- ***** 6. 在这里详细填写你的个人简介和研究兴趣 ***** -->
-            <p>
-                大家好，我是秦川。目前是 [你的大学/机构] 的一名 [你的职位/身份]。我的研究兴趣主要集中在 [你的主要研究领域]。
-                具体来说，我专注于 [具体方向 1]、[具体方向 2] 以及 [具体方向 3]。我致力于 [你的研究目标或愿景，例如：开发更智能的算法 / 解决某某挑战等]。
-                欢迎对我的研究感兴趣的同行与我交流合作！
-            </p>
-            <hr style="border: none; border-top: 1px solid #eee; margin: 15px 0;">
-            <h3>学习经历 (Education)</h3>
-            <ul>
-                <!-- ***** 7. 修改或添加你的学习经历，可复制<li>标签添加更多条目 ***** -->
-                <li><strong>[你的学位]</strong>, [你的专业], [你的学校], [城市, 国家] ([开始年份] - [结束年份])</li>
-                <li><strong>[你的学位]</strong>, [你的专业], [你的学校], [城市, 国家] ([开始年份] - [结束年份])</li>
-            </ul>
+    <section id="biography">
+        <h2>Biography</h2>
+        <p>I'm a technical staff member at Anuttacon... [完整个人简介内容]</p>
+    </section>
+
+    <section id="news">
+        <h2>News</h2>
+        <div class="news-item">
+            <strong>[2025.03]</strong> Please check and register our AI-Native Game project...
         </div>
+        <!-- 其他news条目 -->
     </section>
 
     <section id="research">
-        <h2>研究成果 (Research)</h2>
-        <p><em>*代表通讯作者或项目负责人 (corresponding author or project lead), #代表同等贡献 (equal contribution).</em></p> <!-- 可选标注 -->
-
-        <!-- ***** 论文条目模板开始 (复制整个 <article> 块来添加新论文) ***** -->
-        <article class="paper">
-            <!-- ***** 8a. 修改论文示意图文件名及路径 ***** -->
-            <img src="images/paper1.png" alt="[简短描述图片内容，例如：Paper 1 Teaser]" class="thumbnail">
-            <div class="details">
-                <!-- ***** 8b. 修改论文标题 ***** -->
-                <h3>[论文的完整标题写在这里]</h3>
-                <!-- ***** 8c. 修改作者列表，用 <strong> 标签加粗你自己的名字 ***** -->
-                <p class="authors">[作者一], <strong>秦川 (Chuan Qin)</strong>, [作者三], [作者四]</p>
-                <!-- ***** 8d. 修改发表的期刊或会议名称和年份 ***** -->
-                <p class="venue"><em>[期刊名 或 会议名 (例如：CVPR / ICCV / ECCV / NeurIPS / ICML / ICLR / TPAMI / IJCV)]</em>, [年份]</p>
-                 <!-- ***** 8e. 修改或添加链接，不需要的链接类型可以删除对应的 <a> 标签 ***** -->
-                <p class="links">
-                    <a href="[论文的官方链接或ArXiv链接]" target="_blank">[Paper]</a>
-                    <a href="[代码的GitHub链接]" target="_blank">[Code]</a>
-                    <!-- <a href="[项目主页链接]" target="_blank">[Project Page]</a> -->
-                    <!-- <a href="[数据链接]" target="_blank">[Data]</a> -->
-                    <!-- <a href="[B站或YouTube视频演示链接]" target="_blank">[Demo Video]</a> -->
-                </p>
-                <!-- ***** 8f. 可选：添加一小段论文亮点或摘要 ***** -->
-                <!-- <p> A brief highlight of the paper or its main contribution can go here. </p> -->
+        <h2>Selected Research</h2>
+        <div class="paper">
+            <div class="paper-title">The Dawn of Video Generation...</div>
+            <div class="authors">Ailing Zeng', Yuhang Yang'...</div>
+            <div class="venue">technical report, 2024</div>
+            <div class="badges">
+                <span class="badge">Website</span>
+                <span class="badge">225 stars</span>
             </div>
-        </article>
-        <!-- ***** 论文条目模板结束 ***** -->
-
-        <!-- ***** 在下方复制粘贴上面的 <article> 块来添加更多论文 ***** -->
-
-        <article class="paper">
-            <!-- ***** 9a. 修改论文示意图 ***** -->
-            <img src="images/paper2.jpg" alt="[Paper 2 Teaser]" class="thumbnail">
-            <div class="details">
-                <!-- ***** 9b. 修改论文标题 ***** -->
-                <h3>[第二篇论文的标题]</h3>
-                <!-- ***** 9c. 修改作者列表 ***** -->
-                <p class="authors">[作者A], [作者B], <strong>秦川 (Chuan Qin)*</strong></p> <!-- 示例：假设你是通讯作者 -->
-                <!-- ***** 9d. 修改发表信息 ***** -->
-                <p class="venue"><em>[另一个期刊或会议名]</em>, [年份]</p>
-                <!-- ***** 9e. 修改链接 ***** -->
-                <p class="links">
-                    <a href="[Paper 2 Link]" target="_blank">[Paper]</a>
-                    <a href="[Code Link for Paper 2]" target="_blank">[Code]</a>
-                </p>
-            </div>
-        </article>
-
-        <!-- ***** 在这里继续添加更多论文... ***** -->
-
+        </div>
+        <!-- 其他论文条目 -->
     </section>
 
-    <section id="sport">
-        <h2>运动爱好 (Sport)</h2>
-         <!-- ***** 10. 可选：添加运动爱好的总体介绍 ***** -->
-        <p>科研之余，运动是我生活的重要组成部分，帮助我保持精力充沛和思维清晰。</p>
-
-        <h3><span style="font-size: 1.5em; vertical-align: middle;">🏃</span> 跑步 (Running)</h3>
-        <!-- ***** 11. 填写你的跑步相关描述 ***** -->
-        <p>
-            我喜欢沿着 [你常跑步的地点，例如：苏州河畔 / 学校操场] 享受跑步的乐趣。
-            目前正在为 [你的目标，例如：下一次半程马拉松] 做准备。欢迎跑友交流！
-            <!-- 可以考虑添加 Strava 等个人主页链接 -->
-            <!-- <a href="[你的Strava链接]" target="_blank">My Strava</a> -->
-        </p>
-
-        <h3><span style="font-size: 1.5em; vertical-align: middle;">🏊</span> 游泳 (Swimming)</h3>
-        <!-- ***** 12. 填写你的游泳相关描述 ***** -->
-        <p>
-            在泳池中劈波斩浪能让我完全放松。主要练习 [你擅长或喜欢的泳姿，例如：自由泳和蛙泳]。
-        </p>
-
-        <h3><span style="font-size: 1.5em; vertical-align: middle;">🚴</span> 骑行 (Cycling)</h3>
-        <!-- ***** 13. 填写你的骑行相关描述 ***** -->
-        <p>
-            周末喜欢骑上单车，探索城市周边的风景。最近骑行了 [你骑过的一条有趣路线或地点]。
-        </p>
+    <section id="mentoring">
+        <h2>Mentoring</h2>
+        <ul>
+            <li>Kenkun Liu, CUHK(SZ)</li>
+            <!-- 其他指导条目 -->
+        </ul>
     </section>
 
-    <section id="visitor-stats">
-        <h2>访客足迹 (Visitor Footprints)</h2>
-        <!-- ***** 14. 访问第三方地图服务 (如 RevolverMaps 或 ClustrMaps) ***** -->
-        <!-- ***** 生成你自己的地图代码，并替换掉下面的示例代码 ***** -->
-        <!-- ***** 推荐 RevolverMaps 的 2D 地图样式，并自定义标记颜色为红色 (#ff0000 或类似) ***** -->
-        <!-- Start: Example RevolverMaps Code (REPLACE THIS!) -->
-        <script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5qx3zxxxxx&m=7&c=ff0000&cr1=ffffff&f=arial&l=0" async="async"></script>
-        <!-- End: Example RevolverMaps Code -->
-        <!-- ***** 重要：上面代码中的 i=... 参数必须换成你自己的 ID！ ***** -->
-        <!-- ***** 你也可以选用 ClustrMaps: https://clustrmaps.com/ ***** -->
+    <section id="experience">
+        <h2>Working Experience</h2>
+        <ul>
+            <li>Researcher at International Digital Economy Academy (Apr. 2022 - Apr. 2024)</li>
+            <!-- 其他工作经历 -->
+        </ul>
+    </section>
+
+    <section id="honors">
+        <h2>Honors & Awards</h2>
+        <ul>
+            <li>KAUST AI Rising Star, 2025</li>
+            <!-- 其他荣誉 -->
+        </ul>
     </section>
 
     <footer>
-        <!-- ***** 15. 修改年份和你的名字 ***** -->
-        <p>© 2024 秦川 (Chuan Qin). Last updated: [填写最后更新日期, e.g., July 2024].</p>
-        <p>Powered by GitHub Pages. </p>
+        50,765 Total Pageviews
     </footer>
-
 </body>
 </html>
