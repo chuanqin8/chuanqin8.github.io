@@ -27,4 +27,87 @@ nav a {
     padding: 5px 0;
 }
 
+/* style.css添加 */
+nav a.active {
+    color: #3498db;
+    font-weight: bold;
+    border-bottom: 2px solid;
+}
+
+/* 导航栏间距调整 */
+nav a {
+    margin-right: 25px; /* 增大间距 */
+    padding: 5px 0;
+}
+
+/* PDF链接特殊样式 */
+nav a[href$=".pdf"] {
+    position: relative;
+    padding-right: 18px;
+}
+
+
+h1 {
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+h2 {
+    margin: 40px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    color: #34495e;
+}
+
+.news-item {
+    margin: 15px 0;
+    padding-left: 20px;
+    border-left: 3px solid #3498db;
+}
+
+.paper {
+    margin: 25px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.paper-title {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.authors {
+    color: #7f8c8d;
+    margin: 8px 0;
+}
+
+.venue {
+    color: #3498db;
+    font-style: italic;
+}
+
+.badges {
+    margin-top: 10px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 8px;
+    margin-right: 8px;
+    background: #e8f4fd;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: #2980b9;
+}
+
+footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    text-align: center;
+    color: #7f8c8d;
+}
+
 /* 其他公共样式... */
