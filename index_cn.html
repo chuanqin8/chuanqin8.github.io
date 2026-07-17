@@ -10,6 +10,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>CQ</text></svg>">
+  <meta property="og:title" content="秦川 | 兰州大学博士研究生">
+  <meta property="og:description" content="兰州大学博士研究生，研究方向为深度学习优化、泛化性与机器人控制。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chuanqin8.github.io/index_cn.html">
+  <meta property="og:image" content="https://chuanqin8.github.io/images/qinchuan.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="秦川 | 兰州大学博士研究生">
+  <meta name="twitter:description" content="兰州大学博士研究生，研究方向为深度学习优化、泛化性与机器人控制。">
 </head>
 <body>
 
@@ -93,7 +102,7 @@
       <ul class="pub-list">
         <!-- 1: SAM-LA JAS -->
         <li class="pub">
-          <img src="images/paper_samla.png" alt="SAM-LA" class="pub-thumb">
+          <img src="images/paper_samla.jpg" alt="SAM-LA" class="pub-thumb">
           <div class="pub-body">
             <div class="pub-title">SAM-LA: Efficient Sharpness-Aware Minimization Training via Loss Acceleration</div>
             <div class="pub-authors"><span class="self">Chuan Qin</span>, Liangming Chen, and Long Jin</div>
@@ -144,7 +153,7 @@
 
         <!-- 4: Survey -->
         <li class="pub">
-          <img src="images/paper_survey.png" alt="Survey" class="pub-thumb">
+          <img src="images/paper_survey.jpg" alt="Survey" class="pub-thumb">
           <div class="pub-body">
             <div class="pub-title">A Survey of Large-Model-Based AI Agents</div>
             <div class="pub-authors"><span class="self">Chuan Qin</span> and Long Jin</div>
@@ -297,6 +306,13 @@
       </ul>
     </section>
 
+    <section id="review">
+      <h2><span class="icon"><i class="fas fa-glasses"></i></span> 审稿服务</h2>
+      <ul class="honor-list">
+        <li class="honor-item">IEEE/CAA Journal of Automatica Sinica (JAS)</li>
+      </ul>
+    </section>
+
     <section id="honors">
       <h2><span class="icon"><i class="fas fa-award"></i></span> 荣誉奖项</h2>
       <ul class="honor-list">
@@ -335,6 +351,33 @@
 </footer>
 
 <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=f0ecec&w=300&t=tt&d=0VNEHlh94T2rzbIyiPON_Q6wNyb-2dSkkln2FM5XPnQ&co=5d78bf&cmo=ca2525&cmn=22a122&ct=fdf8f8'></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav .links a[href^="#"]');
+    
+    function updateActive() {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop <= 120) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    }
+    
+    window.addEventListener('scroll', updateActive);
+    updateActive();
+  });
+</script>
 
 </body>
 </html>
