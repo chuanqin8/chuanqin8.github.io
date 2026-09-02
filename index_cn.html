@@ -22,6 +22,8 @@
 </head>
 <body>
 
+<div class="progress-bar" id="progressBar"></div>
+
 <nav>
   <a href="index_cn.html" class="brand">秦川</a>
   <div class="links">
@@ -30,7 +32,7 @@
     <a href="#publications">论文</a>
     <a href="#projects">项目</a>
     <a href="#education">教育背景</a>
-    <a href="cv_qinchuan_cn.pdf" target="_blank">简历 <span style="font-size:10px;opacity:0.5;"><i class="fas fa-external-link-alt"></i></span></a>
+    <a href="cv_qinchuan_cn.pdf" target="_blank" rel="noopener">简历 <span style="font-size:10px;opacity:0.5;"><i class="fas fa-external-link-alt"></i></span></a>
     <div class="lang-switch">
       <a href="index.html">EN</a>
       <a href="index_cn.html" class="active">中</a>
@@ -48,14 +50,14 @@
       <div class="name-zh">Chuan Qin</div>
       <div class="title">博士研究生</div>
       <div class="affiliation">
-        <a href="https://www.lzu.edu.cn/" target="_blank">兰州大学</a><br>
+        <a href="https://www.lzu.edu.cn/" target="_blank" rel="noopener">兰州大学</a><br>
         信息科学与工程学院
       </div>
       <div class="contact">
         <a href="mailto:qinchuan8@foxmail.com" title="邮箱"><i class="fas fa-envelope"></i></a>
-        <a href="https://github.com/chuanqin8" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://scholar.google.com/citations?user=17NMHvUAAAAJ" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-        <a href="cv_qinchuan_cn.pdf" target="_blank" title="简历 PDF"><i class="fas fa-file-pdf"></i></a>
+        <a href="https://github.com/chuanqin8" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://scholar.google.com/citations?user=17NMHvUAAAAJ" target="_blank" rel="noopener" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="cv_qinchuan_cn.pdf" target="_blank" rel="noopener" title="简历 PDF"><i class="fas fa-file-pdf"></i></a>
       </div>
       <div class="stats">
         <strong>Google Scholar</strong><br>
@@ -70,7 +72,7 @@
     <section id="about">
       <h2><span class="icon"><i class="fas fa-user"></i></span> 简介</h2>
       <p>
-        你好！我是<strong>秦川</strong>（Chuan Qin），<a href="https://www.lzu.edu.cn/" target="_blank">兰州大学信息科学与工程学院</a>博士研究生在读，导师为金龙教授。
+        你好！我是<strong>秦川</strong>（Chuan Qin），<a href="https://www.lzu.edu.cn/" target="_blank" rel="noopener">兰州大学信息科学与工程学院</a>博士研究生在读，导师为金龙教授。
       </p>
       <p>
         我的研究位于<strong>深度学习理论</strong>与<strong>具身智能</strong>的交叉领域。我致力于开发能够提升神经网络泛化能力和训练效率的优化算法，并将这些理论洞察应用于机器人控制与决策。我特别关注如何用<strong>动态系统理论</strong>桥接现代深度学习 —— 理解训练动力学、锐度感知最小化（Sharpness-Aware Minimization）以及梯度流如何塑造大模型的泛化行为。我相信，对优化景观的深入理解是构建鲁棒、高效且可泛化的人工智能系统的关键。
@@ -87,6 +89,22 @@
     <section id="news">
       <h2><span class="icon"><i class="fas fa-bullhorn"></i></span> 动态</h2>
       <ul class="news-list">
+        <li class="news-item">
+          <span class="date">2025</span>
+          <span class="content">论文 <strong>SAM-LA</strong> 被 <em>IEEE/CAA Journal of Automatica Sinica</em> (JAS) 小修后接收。</span>
+        </li>
+        <li class="news-item">
+          <span class="date">2025</span>
+          <span class="content">综述论文 <strong>A Survey of Large-Model-Based AI Agents</strong> 被 <em>Tsinghua Science and Technology</em> 录用。</span>
+        </li>
+        <li class="news-item">
+          <span class="date">2025</span>
+          <span class="content">论文发表于 <em>IEEE Transactions on Consumer Electronics</em> (TCE)。</span>
+        </li>
+        <li class="news-item">
+          <span class="date">2025</span>
+          <span class="content">获评 <strong>KAUST AI Rising Star</strong>。</span>
+        </li>
       </ul>
     </section>
 
@@ -111,7 +129,7 @@
               <span class="tag tag-accept">小修</span>
             </div>
             <div class="pub-links">
-              <a href="#" onclick="alert('修改完成后上线。')"><span class="icon"><i class="fas fa-clock"></i></span> 即将上线</a>
+              <span class="soon"><span class="icon"><i class="fas fa-clock"></i></span> 即将上线</span>
             </div>
           </div>
         </li>
@@ -128,8 +146,8 @@
               <span class="tag tag-new">引用 75</span>
             </div>
             <div class="pub-links">
-              <a href="https://www.sciencedirect.com/science/article/pii/S0893608023002125" target="_blank"><span class="icon"><i class="fas fa-file-alt"></i></span> 论文</a>
-              <a href="https://github.com/chuanqin8/ACT-In-NLP" target="_blank"><span class="icon"><i class="fas fa-code"></i></span> 代码</a>
+              <a href="https://www.sciencedirect.com/science/article/pii/S0893608023002125" target="_blank" rel="noopener"><span class="icon"><i class="fas fa-file-alt"></i></span> 论文</a>
+              <a href="https://github.com/chuanqin8/ACT-In-NLP" target="_blank" rel="noopener"><span class="icon"><i class="fas fa-code"></i></span> 代码</a>
             </div>
           </div>
         </li>
@@ -146,7 +164,7 @@
               <span class="tag tag-new">引用 10</span>
             </div>
             <div class="pub-links">
-              <a href="https://ieeexplore.ieee.org/abstract/document/10874179/" target="_blank"><span class="icon"><i class="fas fa-file-alt"></i></span> 论文</a>
+              <a href="https://ieeexplore.ieee.org/abstract/document/10874179/" target="_blank" rel="noopener"><span class="icon"><i class="fas fa-file-alt"></i></span> 论文</a>
             </div>
           </div>
         </li>
@@ -162,7 +180,7 @@
               <span class="tag tag-published">已发表</span>
             </div>
             <div class="pub-links">
-              <a href="https://www.sciopen.com/article/10.26599/TST.2026.9010072" target="_blank"><span class="icon"><i class="fas fa-file-alt"></i></span> 论文</a>
+              <a href="https://www.sciopen.com/article/10.26599/TST.2026.9010072" target="_blank" rel="noopener"><span class="icon"><i class="fas fa-file-alt"></i></span> 论文</a>
             </div>
           </div>
         </li>
@@ -178,7 +196,7 @@
               <span class="tag tag-accept">小修</span>
             </div>
             <div class="pub-links">
-              <a href="#" onclick="alert('修改完成后上线。')"><span class="icon"><i class="fas fa-clock"></i></span> 即将上线</a>
+              <span class="soon"><span class="icon"><i class="fas fa-clock"></i></span> 即将上线</span>
             </div>
           </div>
         </li>
@@ -251,7 +269,7 @@
 
       <p style="font-size:13px;color:var(--text-muted);margin-top:12px;margin-bottom:0;">
         <i class="fas fa-info-circle" style="margin-right:4px;"></i>
-        完整论文列表及 BibTeX 请见 <a href="https://scholar.google.com/citations?user=17NMHvUAAAAJ" target="_blank">Google Scholar</a>。
+        完整论文列表及 BibTeX 请见 <a href="https://scholar.google.com/citations?user=17NMHvUAAAAJ" target="_blank" rel="noopener">Google Scholar</a>。
       </p>
     </section>
 
@@ -309,10 +327,10 @@
     <section id="honors">
       <h2><span class="icon"><i class="fas fa-award"></i></span> 荣誉奖项</h2>
       <ul class="honor-list">
+        <li class="honor-item">KAUST AI Rising Star, 2025</li>
         <li class="honor-item">年会论文一等奖</li>
         <li class="honor-item">学业奖学金一等奖</li>
         <li class="honor-item">兰州大学优秀研究生</li>
-
       </ul>
     </section>
 
@@ -338,18 +356,24 @@
     &copy; 2025 秦川 (Chuan Qin). All rights reserved.
   </p>
   <p style="font-size:11px;">
-    纯 HTML + CSS 构建。托管于 <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>。
+    纯 HTML + CSS 构建。托管于 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>。
     <a href="index.html" style="margin-left:8px;">English Version</a>
   </p>
+  <div class="visitor-map">
+    <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=f0ecec&w=300&t=tt&d=0VNEHlh94T2rzbIyiPON_Q6wNyb-2dSkkln2FM5XPnQ&co=5d78bf&cmo=ca2525&cmn=22a122&ct=fdf8f8'></script>
+  </div>
 </footer>
 
-<script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=f0ecec&w=300&t=tt&d=0VNEHlh94T2rzbIyiPON_Q6wNyb-2dSkkln2FM5XPnQ&co=5d78bf&cmo=ca2525&cmn=22a122&ct=fdf8f8'></script>
+<button class="back-to-top" id="backToTop" title="回到顶部" aria-label="回到顶部">
+  <i class="fas fa-arrow-up"></i>
+</button>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
+    // Nav active state
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('nav .links a[href^="#"]');
-    
+
     function updateActive() {
       let current = '';
       sections.forEach(section => {
@@ -358,7 +382,7 @@
           current = section.getAttribute('id');
         }
       });
-      
+
       navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === '#' + current) {
@@ -366,9 +390,40 @@
         }
       });
     }
-    
-    window.addEventListener('scroll', updateActive);
-    updateActive();
+
+    // Scroll progress bar + back-to-top visibility
+    const progressBar = document.getElementById('progressBar');
+    const backToTop = document.getElementById('backToTop');
+
+    function onScroll() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+      backToTop.classList.toggle('show', scrollTop > 400);
+      updateActive();
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Scroll reveal animation
+    const revealEls = document.querySelectorAll('section, .pub, .project');
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      revealEls.forEach(el => el.classList.add('reveal'));
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      revealEls.forEach(el => observer.observe(el));
+    }
   });
 </script>
 

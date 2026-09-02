@@ -775,3 +775,111 @@ html {
 @media (prefers-color-scheme: dark) {
   /* Keep light for academic readability, but slightly adjust if needed */
 }
+
+/* ===== Polish additions ===== */
+
+/* Scroll progress bar */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2.5px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+  z-index: 200;
+  transition: width 0.1s linear;
+}
+
+/* Keyboard focus visibility */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* "Coming soon" placeholder (replaces alert() links) */
+.soon {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: default;
+}
+
+.soon .icon {
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+/* Scroll reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: rgba(255,255,255,0.95);
+  color: var(--text-light);
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.10);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: all 0.25s ease;
+  z-index: 150;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.back-to-top:hover {
+  color: var(--accent);
+  border-color: #bee3f8;
+  background: #ebf8ff;
+}
+
+/* Visitor map in footer */
+.visitor-map {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  min-height: 0;
+}
+
+@media (max-width: 800px) {
+  .back-to-top {
+    right: 16px;
+    bottom: 16px;
+  }
+}
