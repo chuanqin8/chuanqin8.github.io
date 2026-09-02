@@ -29,8 +29,9 @@
   <div class="links">
     <a href="#about" class="active">简介</a>
     <a href="#news">动态</a>
+    <a href="#vla">个人项目</a>
     <a href="#publications">论文</a>
-    <a href="#projects">项目</a>
+    <a href="#projects">基金项目</a>
     <a href="#education">教育背景</a>
     <a href="cv_qinchuan_cn.pdf" target="_blank" rel="noopener">简历 <span style="font-size:10px;opacity:0.5;"><i class="fas fa-external-link-alt"></i></span></a>
     <div class="lang-switch">
@@ -61,8 +62,8 @@
       </div>
       <div class="stats">
         <strong>Google Scholar</strong><br>
-        引用: <span class="highlight">85</span> &nbsp;|&nbsp; h-index: <span class="highlight">2</span> &nbsp;|&nbsp; i10-index: <span class="highlight">2</span><br>
-        <span style="font-size:11px;color:var(--text-muted);">数据更新于 2025</span>
+        引用: <span class="highlight">86</span> &nbsp;|&nbsp; h-index: <span class="highlight">2</span> &nbsp;|&nbsp; i10-index: <span class="highlight">2</span><br>
+        <span style="font-size:11px;color:var(--text-muted);">数据更新于 2026</span>
       </div>
     </div>
   </aside>
@@ -79,6 +80,9 @@
       </p>
       <p>
         我深度参与了<strong>CCF-华为胡杨林基金</strong>、<strong>CCF-百度松果基金</strong>和<strong>中国人工智能学会-华为 MindSpore 学术奖励基金</strong>等项目，相关成果发表于 <em>Neural Networks</em>、<em>IEEE Transactions on Consumer Electronics</em> 及 <em>IEEE/CAA Journal of Automatica Sinica</em> 等期刊。担任 <em>IEEE/CAA Journal of Automatica Sinica</em> (JAS) 审稿人。
+      </p>
+      <p>
+        理论之外，我也动手造系统：我独立研发了<strong>桌面物品自主收纳具身智能系统</strong>——自研遥操作数据采集 SDK，基于 <strong>StarVLA（Qwen3-VL-4B）</strong>完成 SFT + IWR 后训练，并在 Franka 机械臂上实现实时闭环部署，在物体任意位姿下均能完成任务（见下方<a href="#vla">演示视频</a>）。熟悉 Transformer／VLM／VLA 架构（<strong>StarVLA、ACT、Diffusion Policy、OpenVLA</strong>），具备 SFT 后训练与 DeepSpeed 分布式训练经验。
       </p>
       <p style="margin-bottom:0;">
         <i class="fas fa-running" style="color:var(--accent);margin-right:6px;"></i>
@@ -106,6 +110,30 @@
           <span class="content">获评 <strong>KAUST AI Rising Star</strong>。</span>
         </li>
       </ul>
+    </section>
+
+    <section id="vla">
+      <h2><span class="icon"><i class="fas fa-robot"></i></span> 个人项目</h2>
+      <div class="vla-card">
+        <div class="vla-head">
+          <div>
+            <div class="vla-title">桌面物品自主收纳具身智能系统（采-训-推全链路）</div>
+            <div class="vla-sub">StarVLA（Qwen3-VL-4B + 逐层流匹配动作头）&times; Franka 机械臂 &mdash; 全链路独立完成</div>
+          </div>
+          <div class="vla-badges">
+            <span class="tag tag-real">真机部署</span>
+            <span class="tag tag-new">空间泛化</span>
+          </div>
+        </div>
+        <video class="vla-video" src="images/vla_demo.mp4" controls muted loop playsinline preload="metadata"></video>
+        <ul class="vla-points">
+          <li><strong>任务场景。</strong>面向桌面环境中目标物体的自主识别、抓取与收纳（典型任务「将魔方放入盒子」），独立完成从数据采集、模型训练到真机部署的完整系统研发。</li>
+          <li><strong>模型架构。</strong>基于 <strong>StarVLA</strong> 框架构建视觉-语言-动作（VLA）模型——Qwen3-VL-4B 视觉语言骨干＋逐层流匹配动作头，端到端贯通场景理解与动作生成。</li>
+          <li><strong>数据采集。</strong>自研遥操作数采 SDK（AI 辅助开发），同步记录多视角 RGB 图像、机械臂关节状态与末端执行器位姿，构建演示数据集。</li>
+          <li><strong>模型训练。</strong>采用监督微调（SFT）进行后训练，并引入 <strong>IWR</strong> 重要性加权技术筛选演示数据，提升小样本场景下策略的泛化能力。</li>
+          <li><strong>真机部署。</strong>策略在 Franka 机械臂上实时闭环推理，在魔方与盒子任意位姿摆放下均能完成收纳任务，展现出良好的空间泛化能力。</li>
+        </ul>
+      </div>
     </section>
 
     <section id="publications">
@@ -143,7 +171,7 @@
             <div class="pub-venue">Neural Networks (NN), vol. 164, pp. 135-145, 2023. <span class="if">IF=6.3</span></div>
             <div class="pub-tags">
               <span class="tag tag-published">已发表</span>
-              <span class="tag tag-new">引用 75</span>
+              <span class="tag tag-new">引用 76</span>
             </div>
             <div class="pub-links">
               <a href="https://www.sciencedirect.com/science/article/pii/S0893608023002125" target="_blank" rel="noopener"><span class="icon"><i class="fas fa-file-alt"></i></span> 论文</a>
@@ -244,7 +272,7 @@
         <li class="pub">
           <div class="pub-thumb" style="background:linear-gradient(135deg,#e2e8f0,#cbd5e0);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--text-muted);font-weight:600;">SAM-L</div>
           <div class="pub-body">
-            <div class="pub-title">SAM-L: Switching SAM with Loss Gap for Efficient Training</div>
+            <div class="pub-title">SAM-L: Dynamically Balancing Sharpness-Awareness and Efficiency With Loss Gap Metric</div>
             <div class="pub-authors"><span class="self">Chuan Qin</span>, Liangming Chen, Yongji Guan, and Long Jin</div>
             <div class="pub-venue">Conference on Neural Information Processing Systems (NeurIPS), 2026. &mdash; 审稿中。</div>
             <div class="pub-tags">
@@ -260,7 +288,7 @@
             <div style="font-size:13.5px;color:var(--text-light);line-height:1.7;margin-top:8px;">
               &bull; <strong>On Ternary Duality of Dynamical Systems, Information Theory, and Deep Learning</strong> &mdash; 投稿至 <em>PNAS</em>（与金龙、曾志刚合作）<br>
               &bull; <strong>Consistency is Key of Fitting and Degradation Alleviating for Deep Neural Networks</strong> &mdash; 审稿中，<em>IEEE TNNLS</em><br>
-              &bull; <strong>Quantum-Inspired Collaborative Neurodynamic Optimization for Traffic Flow Prediction</strong> &mdash; 审稿中，<em>IEEE TCE</em><br>
+              &bull; <strong>Quantum-Inspired Collaborative Neurodynamic Optimization for Traffic Flow Prediction</strong>（与吕建峰、金龙合作）&mdash; 审稿中，<em>IEEE TCE</em><br>
               &bull; <strong>Understanding Residual Neural Networks from Sampling Theorem Perspective</strong> &mdash; 审稿中，<em>IEEE TETCI</em>
             </div>
           </div>
@@ -274,16 +302,21 @@
     </section>
 
     <section id="projects">
-      <h2><span class="icon"><i class="fas fa-flask"></i></span> 科研项目</h2>
+      <h2><span class="icon"><i class="fas fa-flask"></i></span> 基金项目</h2>
       <ul class="project-list">
+        <li class="project">
+          <div class="project-title">基于神经动力学的深度神经网络泛化研究</div>
+          <div class="project-meta">甘肃省高校研究生「创新之星」项目 | 1 万元 | 2025.10 &mdash; 2026.10</div>
+          <div class="project-desc"><strong>项目负责人。</strong>独立撰写项目申请书，独立承担全部研究工作。</div>
+        </li>
         <li class="project">
           <div class="project-title">微分方程诠释的大模型泛化和鲁棒性研究</div>
           <div class="project-meta">CCF-华为胡杨林基金理论计算机科学专项 | 11 万元 | 2024.10 &mdash; 2025.10</div>
           <div class="project-desc">主要参与人。参与核心研究，利用神经微分方程（Neural ODEs）解释并改进基础模型的泛化性与鲁棒性。</div>
         </li>
         <li class="project">
-          <div class="project-title">神经微分方程诠释大模型的稳定性、收敛性及优化策略研究</div>
-          <div class="project-meta">CCF-百度松果基金 | 15 万元 | 2023.11 &mdash; 2024.10</div>
+          <div class="project-title">飞桨平台上微分方程诠释大模型的稳定性、收敛性及优化策略研究</div>
+          <div class="project-meta">CCF-百度松果基金 | 15 万元 | 2023.08 &mdash; 2024.07</div>
           <div class="project-desc">主要参与人。参与核心算法研发，研究神经微分方程如何解释大规模模型训练动力学并指导优化策略。</div>
         </li>
         <li class="project">
@@ -344,6 +377,10 @@
         <div class="misc-card">
           <h3><i class="fas fa-language" style="color:var(--accent);margin-right:6px;"></i> 语言</h3>
           <p>中文（母语），英语（CET-6，具备阅读与撰写英文学术论文的专业能力）。</p>
+        </div>
+        <div class="misc-card">
+          <h3><i class="fas fa-tools" style="color:var(--accent);margin-right:6px;"></i> 技术能力</h3>
+          <p>Python / PyTorch / Linux；VLA 与策略架构（StarVLA、ACT、Diffusion Policy、OpenVLA）；SFT 后训练与 DeepSpeed 分布式训练；Franka 机械臂真机部署与遥操作（自研数采 SDK）。</p>
         </div>
       </div>
     </section>
