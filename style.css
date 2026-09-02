@@ -921,11 +921,14 @@ a:focus-visible, button:focus-visible {
 }
 
 .vla-video {
-  width: 100%;
-  border-radius: var(--radius);
   display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 440px;     /* 竖屏视频限高，不超出原始分辨率避免模糊 */
+  margin: 0 auto 14px;
+  border-radius: var(--radius);
   background: #000;
-  margin-bottom: 14px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
 
