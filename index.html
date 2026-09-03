@@ -127,7 +127,7 @@
           <li><strong>Task.</strong> Autonomous recognition, grasping, and tidy-up of tabletop objects (canonical task: &ldquo;put the Rubik's cube into the box&rdquo;), with the full pipeline from data collection and training to real-robot deployment built independently.</li>
           <li><strong>Model.</strong> A vision-language-action (VLA) model built on the <strong>StarVLA</strong> framework &mdash; Qwen3-VL-4B vision-language backbone with a layer-wise flow-matching action head, end-to-end from scene understanding to action generation.</li>
           <li><strong>Data collection.</strong> A self-developed teleoperation SDK (AI-assisted development) records multi-view RGB images, joint states, and end-effector poses in sync to build the demonstration dataset.</li>
-          <li><strong>Training.</strong> Supervised fine-tuning (SFT) with <strong>IWR</strong> importance weighting over demonstrations to boost policy generalization in the low-data regime.</li>
+          <li><strong>Training.</strong> SFT post-training with <strong>IWR</strong>-filtered demonstrations to boost policy generalization in the low-data regime.</li>
           <li><strong>Deployment.</strong> Real-time closed-loop inference on a Franka arm &mdash; the policy completes the task under arbitrary cube/box placements, showing strong spatial generalization.</li>
         </ul>
       </div>
