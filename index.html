@@ -62,7 +62,7 @@
       </div>
       <div class="stats">
         <strong>Google Scholar</strong><br>
-        Citations: <span class="highlight">86</span> &nbsp;|&nbsp; h-index: <span class="highlight">2</span> &nbsp;|&nbsp; i10-index: <span class="highlight">2</span><br>
+        Citations: <span class="highlight">93</span> &nbsp;|&nbsp; h-index: <span class="highlight">2</span> &nbsp;|&nbsp; i10-index: <span class="highlight">2</span><br>
         <span style="font-size:11px;color:var(--text-muted);">Updated 2026</span>
       </div>
     </div>
@@ -76,10 +76,10 @@
         Hi! I am <strong>Chuan Qin</strong> (秦川), a Ph.D. candidate at the <a href="https://www.lzu.edu.cn/" target="_blank" rel="noopener">School of Artificial Intelligence, Lanzhou University</a>, advised by <a href="https://scholar.google.com/citations?hl=zh-CN&user=zt5LfSeWy9gC" target="_blank" rel="noopener">Prof. Long Jin</a>.
       </p>
       <p>
-        My research focuses on <strong>embodied intelligence</strong> and <strong>generalization</strong>. I develop optimization algorithms that improve the generalization and efficiency of neural networks, and I apply these theoretical insights to robot control and decision-making. I am particularly interested in bridging <strong>dynamical systems theory</strong> with modern deep learning — understanding how training dynamics and sharpness-aware minimization shape the generalization of large models. I believe that a principled understanding of optimization landscapes is key to building robust, efficient, and generalizable embodied AI systems.
+        My research focuses on the <strong>generalization and robustness</strong> of <strong>embodied intelligence</strong>. I am currently working on two problems: (1) <strong>robust post-training of VLA models</strong> from an optimization perspective, improving their OOD generalization under physical perturbations such as camera viewpoint, initial arm pose, and lighting (StarVLA · LIBERO / LIBERO-Plus); and (2) a systematic analysis of the internal mechanisms and failure modes of <strong>World Action Models (WAM)</strong> under visual perturbations. More broadly, I am interested in bridging <strong>dynamical systems theory</strong> with modern deep learning — understanding how training dynamics and sharpness-aware minimization shape the generalization of large models. I believe that a principled understanding of optimization landscapes is key to building robust, efficient, and generalizable embodied AI systems.
       </p>
       <p>
-        Beyond theory, I also build systems. I independently developed a <strong>desktop tidy-up embodied AI system</strong> on a Franka arm &mdash; from a self-built teleoperation data-collection SDK, through VLA post-training (SFT with IWR on <strong>StarVLA / Qwen3-VL-4B + LayerwiseFM</strong>), to real-time closed-loop deployment that generalizes across arbitrary object poses (see the <a href="#vla">demos</a> below). I am familiar with VLA/WAM architectures (<strong>pi, FastWAM, StarVLA</strong>, etc.) and have hands-on experience with SFT post-training.
+        Beyond theory, I also build systems. I independently developed a <strong>desktop tidy-up embodied AI system</strong> on a Franka arm &mdash; from a self-built teleoperation SDK that removes the real-time-kernel dependency, through VLA post-training on <strong>StarVLA (Qwen3-VL-4B + LayerwiseFM)</strong>, to 20 Hz real-time closed-loop deployment with a RECAP + DAgger data loop (deploy → correct → auto-retrain), succeeding under arbitrary object poses (see the <a href="#vla">demos</a> below). I am familiar with VLA/WAM architectures (<strong>pi, FastWAM, StarVLA</strong>, etc.) and have hands-on experience with SFT post-training.
       </p>
       <p>
         I was deeply involved in projects funded by <strong>CCF-Huawei</strong>, <strong>CCF-Baidu</strong>, and <strong>CAAI-Huawei MindSpore</strong>. My work has appeared in <em>Neural Networks</em>, <em>IEEE Transactions on Consumer Electronics</em>, and <em>IEEE/CAA Journal of Automatica Sinica</em>. I serve as a reviewer for <em>IEEE/CAA Journal of Automatica Sinica</em> (JAS).
@@ -123,6 +123,7 @@
           <div class="vla-badges">
             <span class="tag tag-real">Real-Robot</span>
             <span class="tag tag-new">Spatial Generalization</span>
+            <span class="tag tag-accept">Data-Loop Iteration</span>
           </div>
         </div>
         <div class="vla-videos">
@@ -136,11 +137,11 @@
           </div>
         </div>
         <ul class="vla-points">
-          <li><strong>Task.</strong> Autonomous recognition, grasping, and tidy-up of tabletop objects (canonical task: &ldquo;put the Rubik's cube into the box&rdquo;), with the full pipeline from data collection and training to real-robot deployment built independently.</li>
-          <li><strong>Model.</strong> A vision-language-action (VLA) model built on the <strong>StarVLA</strong> framework &mdash; Qwen3-VL-4B vision-language backbone with a layer-wise flow-matching action head, end-to-end from scene understanding to action generation.</li>
-          <li><strong>Data collection.</strong> A self-developed teleoperation SDK (AI-assisted development) records multi-view RGB images, joint states, and end-effector poses in sync to build the demonstration dataset.</li>
-          <li><strong>Training.</strong> SFT post-training with <strong>IWR</strong>-filtered demonstrations to boost policy generalization in the low-data regime.</li>
-          <li><strong>Deployment.</strong> Real-time closed-loop inference on a Franka arm &mdash; the policy completes the task under arbitrary cube/box placements, showing strong spatial generalization.</li>
+          <li><strong>Task.</strong> Autonomous tabletop recognition, grasping, and tidy-up (pick-and-place into a box, ordered stacking of multi-color blocks, etc.), with the full pipeline — data collection, training, real-robot deployment, and data-loop iteration — built independently.</li>
+          <li><strong>Data collection.</strong> A self-developed teleoperation SDK based on pylibfranka that removes the real-time-kernel dependency (AI-assisted development), recording multi-view RGB, proprioceptive states, and end-effector poses in sync at 20 Hz (LeRobot v3 format).</li>
+          <li><strong>Training.</strong> VLA post-training on <strong>StarVLA</strong> (Qwen3-VL-4B + LayerwiseFM flow-matching action head), with a dedicated gripper classification head and state dropout for fine-grained manipulation — target-following and success rates markedly improved on the real robot.</li>
+          <li><strong>Deployment.</strong> Real-time closed-loop control at the edge with asynchronous inference and action-chunk smoothing, sustaining smooth 20 Hz motion at 115 ms per inference; tasks are completed stably under arbitrary object/container poses.</li>
+          <li><strong>Data loop.</strong> Reproduced the RECAP mechanism of π*0.6 (per-frame advantage from a value net + advantage-conditioned training) combined with DAgger correction, closing the &ldquo;deploy → correct → auto-retrain&rdquo; loop; success rates under arbitrary poses improved significantly after correction iterations.</li>
         </ul>
       </div>
     </section>
@@ -161,7 +162,7 @@
           <div class="pub-body">
             <div class="pub-title">SAM-LA: Efficient Sharpness-Aware Minimization Training via Loss Acceleration</div>
             <div class="pub-authors"><span class="self">Chuan Qin</span>, Liangming Chen<sup>&dagger;</sup>, and Long Jin</div>
-            <div class="pub-venue">IEEE/CAA Journal of Automatica Sinica (JAS), 2026. <span class="if">IF=18.3</span> &mdash; Accepted. DOI: 10.1109/JAS.2026.126491.</div>
+            <div class="pub-venue">IEEE/CAA Journal of Automatica Sinica (JAS), 2026. <span class="if">IF=19.2</span> &mdash; Accepted. DOI: 10.1109/JAS.2026.126491.</div>
             <div class="pub-tags">
               <span class="tag tag-published">Accepted</span>
             </div>
@@ -181,7 +182,7 @@
             <div class="pub-venue">Neural Networks (NN), vol. 164, pp. 135-145, 2023. <span class="if">IF=6.3</span></div>
             <div class="pub-tags">
               <span class="tag tag-published">Published</span>
-              <span class="tag tag-new">Google Scholar 76</span>
+              <span class="tag tag-new">Google Scholar 81</span>
             </div>
             <div class="pub-links">
               <a href="https://www.sciencedirect.com/science/article/pii/S0893608023002125" target="_blank" rel="noopener"><span class="icon"><i class="fas fa-file-alt"></i></span> Paper</a>
@@ -284,7 +285,7 @@
           <div class="pub-body">
             <div class="pub-title">SAM-L: Dynamically Balancing Sharpness-Awareness and Efficiency With Loss Gap Metric</div>
             <div class="pub-authors"><span class="self">Chuan Qin</span>, Liangming Chen, Yongji Guan, and Long Jin<sup>&dagger;</sup></div>
-            <div class="pub-venue">IEEE Transactions on Neural Networks and Learning Systems (TNNLS). &mdash; Under Review.</div>
+            <div class="pub-venue">International Conference on Learning Representations (ICLR), 2027. &mdash; Under Review.</div>
             <div class="pub-tags">
               <span class="tag tag-review">Under Review</span>
             </div>
@@ -296,7 +297,7 @@
           <div class="pub-body" style="margin-left:0;">
             <div class="pub-title" style="font-size:14.5px;">Other Manuscripts Under Review / Submitted</div>
             <div style="font-size:13.5px;color:var(--text-light);line-height:1.7;margin-top:8px;">
-              &bull; <strong>On Ternary Duality of Dynamical Systems, Information Theory, and Deep Learning</strong> &mdash; Submitted to <em>PNAS</em> (with Long Jin<sup>&dagger;</sup> and Zhigang Zeng)<br>
+              &bull; <strong>On Ternary Duality of Dynamical Systems, Information Theory, and Deep Learning</strong> &mdash; Submitted to <em>Nature Machine Intelligence</em> (with Long Jin<sup>&dagger;</sup> and Zhigang Zeng)<br>
               &bull; <strong>Consistency is Key of Fitting and Degradation Alleviating for Deep Neural Networks</strong> &mdash; Under Review at <em>IEEE TNNLS</em><br>
               &bull; <strong>Quantum-Inspired Collaborative Neurodynamic Optimization for Traffic Flow Prediction</strong> (with Jianfeng Lv and Long Jin) &mdash; Under Review at <em>IEEE TCE</em><br>
               &bull; <strong>Understanding Residual Neural Networks from Sampling Theorem Perspective</strong> &mdash; Under Review at <em>IEEE TETCI</em>
