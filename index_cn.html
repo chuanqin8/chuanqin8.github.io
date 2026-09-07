@@ -52,7 +52,7 @@
       <div class="title">博士研究生</div>
       <div class="affiliation">
         <a href="https://www.lzu.edu.cn/" target="_blank" rel="noopener">兰州大学</a><br>
-        信息科学与工程学院
+        人工智能学院
       </div>
       <div class="contact">
         <a href="mailto:qinchuan8@foxmail.com" title="邮箱"><i class="fas fa-envelope"></i></a>
@@ -73,16 +73,16 @@
     <section id="about">
       <h2><span class="icon"><i class="fas fa-user"></i></span> 简介</h2>
       <p>
-        你好！我是<strong>秦川</strong>（Chuan Qin），<a href="https://www.lzu.edu.cn/" target="_blank" rel="noopener">兰州大学信息科学与工程学院</a>博士研究生在读，导师为金龙教授。
+        你好！我是<strong>秦川</strong>（Chuan Qin），<a href="https://www.lzu.edu.cn/" target="_blank" rel="noopener">兰州大学人工智能学院</a>博士研究生在读，导师为<a href="https://scholar.google.com/citations?hl=zh-CN&user=zt5LfSeWy9gC" target="_blank" rel="noopener">金龙教授</a>。
       </p>
       <p>
-        我的研究位于<strong>深度学习理论</strong>与<strong>具身智能</strong>的交叉领域。我致力于开发能够提升神经网络泛化能力和训练效率的优化算法，并将这些理论洞察应用于机器人控制与决策。我特别关注如何用<strong>动态系统理论</strong>桥接现代深度学习 —— 理解训练动力学、锐度感知最小化（Sharpness-Aware Minimization）以及梯度流如何塑造大模型的泛化行为。我相信，对优化景观的深入理解是构建鲁棒、高效且可泛化的人工智能系统的关键。
+        我的研究方向是<strong>具身智能</strong>与<strong>泛化</strong>。我致力于开发能够提升神经网络泛化能力和训练效率的优化算法，并将这些理论洞察应用于机器人控制与决策。我特别关注如何用<strong>动态系统理论</strong>桥接现代深度学习 —— 理解训练动力学与锐度感知最小化（Sharpness-Aware Minimization）如何塑造大模型的泛化行为。我相信，对优化景观的深入理解是构建鲁棒、高效且可泛化的具身智能系统的关键。
+      </p>
+      <p>
+        理论之外，我也动手造系统：我独立研发了<strong>桌面物品自主收纳具身智能系统</strong>——自研遥操作数据采集 SDK，基于 <strong>StarVLA（Qwen3-VL-4B + LayerwiseFM）</strong>完成 SFT + IWR 后训练，并在 Franka 机械臂上实现实时闭环部署，在物体任意位姿下均能完成任务（见下方<a href="#vla">演示视频</a>）。熟悉 VLA/WAM 架构（<strong>pi、FastWAM、StarVLA</strong> 等），具备 SFT 后训练经验。
       </p>
       <p>
         我深度参与了<strong>CCF-华为胡杨林基金</strong>、<strong>CCF-百度松果基金</strong>和<strong>中国人工智能学会-华为 MindSpore 学术奖励基金</strong>等项目，相关成果发表于 <em>Neural Networks</em>、<em>IEEE Transactions on Consumer Electronics</em> 及 <em>IEEE/CAA Journal of Automatica Sinica</em> 等期刊。担任 <em>IEEE/CAA Journal of Automatica Sinica</em> (JAS) 审稿人。
-      </p>
-      <p>
-        理论之外，我也动手造系统：我独立研发了<strong>桌面物品自主收纳具身智能系统</strong>——自研遥操作数据采集 SDK，基于 <strong>StarVLA（Qwen3-VL-4B）</strong>完成 SFT + IWR 后训练，并在 Franka 机械臂上实现实时闭环部署，在物体任意位姿下均能完成任务（见下方<a href="#vla">演示视频</a>）。熟悉 Transformer／VLM／VLA 架构（<strong>StarVLA、ACT、Diffusion Policy、OpenVLA</strong>），具备 SFT 后训练经验。
       </p>
       <p style="margin-bottom:0;">
         <i class="fas fa-running" style="color:var(--accent);margin-right:6px;"></i>
@@ -94,11 +94,11 @@
       <h2><span class="icon"><i class="fas fa-bullhorn"></i></span> 动态</h2>
       <ul class="news-list">
         <li class="news-item">
-          <span class="date">2025</span>
+          <span class="date">2026.09</span>
           <span class="content">论文 <strong>SAM-LA</strong> 被 <em>IEEE/CAA Journal of Automatica Sinica</em> (JAS) 正式接收。</span>
         </li>
         <li class="news-item">
-          <span class="date">2025</span>
+          <span class="date">2026.06</span>
           <span class="content">综述论文 <strong>A Survey of Large-Model-Based AI Agents</strong> 被 <em>Tsinghua Science and Technology</em> 录用。</span>
         </li>
         <li class="news-item">
@@ -125,7 +125,16 @@
             <span class="tag tag-new">空间泛化</span>
           </div>
         </div>
-        <video class="vla-video" src="images/vla_demo.mp4" controls muted loop playsinline preload="metadata"></video>
+        <div class="vla-videos">
+          <div class="vla-demo">
+            <video class="vla-video" src="images/vla_demo.mp4" controls muted loop playsinline preload="metadata"></video>
+            <div class="vla-demo-cap">任务一：将魔方放入盒子</div>
+          </div>
+          <div class="vla-demo">
+            <video class="vla-video" src="images/pen_demo.mp4" controls muted loop playsinline preload="metadata"></video>
+            <div class="vla-demo-cap">任务二：将笔放入盒子</div>
+          </div>
+        </div>
         <ul class="vla-points">
           <li><strong>任务场景。</strong>面向桌面环境中目标物体的自主识别、抓取与收纳（典型任务「将魔方放入盒子」），独立完成从数据采集、模型训练到真机部署的完整系统研发。</li>
           <li><strong>模型架构。</strong>基于 <strong>StarVLA</strong> 框架构建视觉-语言-动作（VLA）模型——Qwen3-VL-4B 视觉语言骨干＋逐层流匹配动作头，端到端贯通场景理解与动作生成。</li>
@@ -152,12 +161,13 @@
           <div class="pub-body">
             <div class="pub-title">SAM-LA: Efficient Sharpness-Aware Minimization Training via Loss Acceleration</div>
             <div class="pub-authors"><span class="self">Chuan Qin</span>, Liangming Chen<sup>&dagger;</sup>, and Long Jin</div>
-            <div class="pub-venue">IEEE/CAA Journal of Automatica Sinica (JAS). <span class="if">IF=18.3</span> &mdash; 已接收。</div>
+            <div class="pub-venue">IEEE/CAA Journal of Automatica Sinica (JAS), 2026. <span class="if">IF=18.3</span> &mdash; 已接收。DOI: 10.1109/JAS.2026.126491.</div>
             <div class="pub-tags">
               <span class="tag tag-published">已接收</span>
             </div>
             <div class="pub-links">
-              <span class="soon"><span class="icon"><i class="fas fa-clock"></i></span> 即将上线</span>
+              <a href="https://doi.org/10.1109/JAS.2026.126491" target="_blank" rel="noopener"><span class="icon"><i class="fas fa-file-alt"></i></span> 论文</a>
+              <a href="https://github.com/LongJin-lab/SAM-LA" target="_blank" rel="noopener"><span class="icon"><i class="fas fa-code"></i></span> 代码</a>
             </div>
           </div>
         </li>
@@ -343,7 +353,7 @@
         <li class="exp-item">
           <div>
             <div class="exp-role">硕博连读 计算机应用技术</div>
-            <div class="exp-org">兰州大学 信息科学与工程学院</div>
+            <div class="exp-org">兰州大学 人工智能学院</div>
           </div>
           <div class="exp-date">2021 &mdash; 至今</div>
         </li>
