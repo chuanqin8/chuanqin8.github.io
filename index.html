@@ -29,6 +29,7 @@
   <div class="links">
     <a href="#about" class="active">About</a>
     <a href="#news">News</a>
+    <a href="#experience">Experience</a>
     <a href="#vla">Projects</a>
     <a href="#publications">Publications</a>
     <a href="#projects">Grants</a>
@@ -79,7 +80,7 @@
         My research focuses on the <strong>generalization and robustness</strong> of <strong>embodied intelligence</strong>. I am currently working on two problems: (1) <strong>robust post-training of VLA models</strong> from an optimization perspective, improving their OOD generalization under physical perturbations such as camera viewpoint, initial arm pose, and lighting (StarVLA · LIBERO / LIBERO-Plus); and (2) a systematic analysis of the internal mechanisms and failure modes of <strong>World Action Models (WAM)</strong> under visual perturbations. More broadly, I am interested in bridging <strong>dynamical systems theory</strong> with modern deep learning — understanding how training dynamics and sharpness-aware minimization shape the generalization of large models. I believe that a principled understanding of optimization landscapes is key to building robust, efficient, and generalizable embodied AI systems.
       </p>
       <p>
-        Beyond theory, I also build systems. I independently developed a <strong>desktop tidy-up embodied AI system</strong> on a Franka arm &mdash; from a self-built teleoperation SDK that removes the real-time-kernel dependency, through VLA post-training on <strong>StarVLA (Qwen3-VL-4B + LayerwiseFM)</strong>, to 20 Hz real-time closed-loop deployment with a RECAP + DAgger data loop (deploy → correct → auto-retrain), succeeding under arbitrary object poses (see the <a href="#vla">demos</a> below). I am familiar with VLA/WAM architectures (<strong>pi, FastWAM, StarVLA</strong>, etc.) and have hands-on experience with SFT post-training.
+        Beyond theory, I also build systems. I independently developed a <strong>desktop tidy-up embodied AI system</strong> on a Franka arm &mdash; from a self-built teleoperation SDK that removes the real-time-kernel dependency, through VLA post-training on <strong>StarVLA (Qwen3-VL-4B + LayerwiseFM)</strong>, to 20 Hz real-time closed-loop deployment with a RECAP + DAgger data loop (deploy → correct → auto-retrain), succeeding under arbitrary object poses (see the <a href="#vla">demos</a> below). I am familiar with VLA/WAM architectures (<strong>&pi;0.5, pi, FastWAM, StarVLA</strong>, etc.) and have hands-on experience with SFT post-training.
       </p>
       <p>
         I was deeply involved in projects funded by <strong>CCF-Huawei</strong>, <strong>CCF-Baidu</strong>, and <strong>CAAI-Huawei MindSpore</strong>. My work has appeared in <em>Neural Networks</em>, <em>IEEE Transactions on Consumer Electronics</em>, and <em>IEEE/CAA Journal of Automatica Sinica</em>. I serve as a reviewer for <em>IEEE/CAA Journal of Automatica Sinica</em> (JAS).
@@ -93,6 +94,14 @@
     <section id="news">
       <h2><span class="icon"><i class="fas fa-bullhorn"></i></span> News</h2>
       <ul class="news-list">
+        <li class="news-item">
+          <span class="date">2026.10</span>
+          <span class="content">Paper <strong>Anti-Perturbation Solution of Dynamic Multilinear Quaternion Tensor Equations</strong> accepted by <em>CAAI Transactions on Intelligence Technology</em>.</span>
+        </li>
+        <li class="news-item">
+          <span class="date">2026.10</span>
+          <span class="content">Awarded the <strong>National Scholarship</strong> (国家奖学金).</span>
+        </li>
         <li class="news-item">
           <span class="date">2026.09</span>
           <span class="content"><strong>SAM-LA</strong> accepted by <em>IEEE/CAA Journal of Automatica Sinica</em> (JAS).</span>
@@ -108,6 +117,27 @@
         <li class="news-item">
           <span class="date">2025</span>
           <span class="content">Named a <strong>KAUST AI Rising Star</strong>.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="experience">
+      <h2><span class="icon"><i class="fas fa-briefcase"></i></span> Experience</h2>
+      <ul class="exp-list">
+        <li class="exp-item" style="display:block;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;">
+            <div>
+              <div class="exp-role">Embodied AI Algorithm Intern</div>
+              <div class="exp-org">Natural Constant Robotics (Hangzhou) 自然常数（杭州）机器人有限公司</div>
+            </div>
+            <div class="exp-date">2026.09 &mdash; Present</div>
+          </div>
+          <ul style="margin:10px 0 2px 18px;font-size:14px;color:var(--text-light);line-height:1.7;">
+            <li>Industrial deployment for deformable-object stacking and tabletop tidy-up scenarios, covering teleoperation data collection, VLA/WAM post-training, Franka real-robot deployment, and failure-data recirculation.</li>
+            <li>Self-developed a pylibfranka-based teleoperation SDK that removes the real-time-kernel dependency, recording multi-view RGB, proprioceptive states, and end-effector poses in sync at 20 Hz (LeRobot v3).</li>
+            <li>Completed VLA/WAM post-training and edge-side closed-loop deployment with asynchronous inference and action-chunk smoothing &mdash; 20 Hz continuous control at 115 ms per inference; three asynchronous variants (baseline, RTC, TTC) all validated, with about 1.5&times; speedup under the current test protocol.</li>
+            <li>Built an Agent reward-generation &rarr; RLinf training-consumption pipeline, adding <code>container_distance</code> / <code>container_reach</code> reward signals with unit tests, providing engineering support for automated reward design and the retraining loop.</li>
+          </ul>
         </li>
       </ul>
     </section>
@@ -325,6 +355,11 @@
           <div class="project-desc"><strong>Principal Investigator.</strong> Independently wrote the grant proposal and carry out all research work.</div>
         </li>
         <li class="project">
+          <div class="project-title">Research on Generalization and Optimization Mechanisms of Large Models</div>
+          <div class="project-meta">Enterprise Collaboration Project | RMB 350,000</div>
+          <div class="project-desc"><strong>Principal Investigator.</strong> Independently led the full cycle from topic selection, proposal, and experiments to mid-term and final acceptance; reduced GPT-2 training loss by 10.8% and perplexity by 14.1%, with cross-framework reproduction on PaddlePaddle / MindSpore and resulting publications and open-source code.</div>
+        </li>
+        <li class="project">
           <div class="project-title">Differential Equations for Large Model Generalization and Robustness</div>
           <div class="project-meta">CCF-Huawei Research Fund | RMB 110,000 | 2024.10 &mdash; 2025.10</div>
           <div class="project-desc">Key Participant. Participated in core research on using neural ODEs to interpret and improve the generalization and robustness of foundation models.</div>
@@ -396,7 +431,7 @@
         </div>
         <div class="misc-card">
           <h3><i class="fas fa-tools" style="color:var(--accent);margin-right:6px;"></i> Technical Skills</h3>
-          <p>Python / PyTorch / Linux; VLA &amp; policy architectures (StarVLA, OpenVLA); SFT post-training; Franka real-robot deployment &amp; teleoperation (self-built data-collection SDK).</p>
+          <p>Python / PyTorch / Linux; VLA &amp; policy architectures (StarVLA, FastWAM, &pi;0.5, OpenVLA); SFT / RL post-training (RLinf); LeRobot data pipelines; Franka real-robot deployment &amp; teleoperation (self-built data-collection SDK); asynchronous inference at the edge (RTC / TTC).</p>
         </div>
       </div>
     </section>
