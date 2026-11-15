@@ -29,6 +29,7 @@
   <div class="links">
     <a href="#about" class="active">简介</a>
     <a href="#news">动态</a>
+    <a href="#experience">实习</a>
     <a href="#vla">项目</a>
     <a href="#publications">论文</a>
     <a href="#projects">基金项目</a>
@@ -79,7 +80,7 @@
         我的研究方向是<strong>具身智能</strong>的<strong>泛化与鲁棒性</strong>。目前主要开展两项工作：一是从优化算法层面研究 VLA 模型的鲁棒后训练，提升其在分布外（OOD）扰动（相机视角、机械臂初始位姿、光照等）下的泛化能力（StarVLA · LIBERO / LIBERO-Plus）；二是系统探究<strong>世界动作模型（WAM）</strong>在视觉扰动下的内部工作机制与失效机理。我更广义的研究兴趣是用<strong>动态系统理论</strong>桥接现代深度学习 —— 理解训练动力学与锐度感知最小化（Sharpness-Aware Minimization）如何塑造大模型的泛化行为。我相信，对优化景观的深入理解是构建鲁棒、高效且可泛化的具身智能系统的关键。
       </p>
       <p>
-        理论之外，我也动手造系统：我独立研发了<strong>桌面物品自主收纳具身智能系统</strong>——自研免实时内核遥操作数采 SDK，基于 <strong>StarVLA（Qwen3-VL-4B + LayerwiseFM）</strong>完成后训练，在 Franka 机械臂上实现 20Hz 实时闭环部署，并复现 RECAP + DAgger 打通「部署 → 纠偏采集 → 自动重训」数据闭环（见下方<a href="#vla">演示视频</a>）。熟悉 VLA/WAM 架构（<strong>pi、FastWAM、StarVLA</strong> 等），具备 SFT 后训练经验。
+        理论之外，我也动手造系统：我独立研发了<strong>桌面物品自主收纳具身智能系统</strong>——自研免实时内核遥操作数采 SDK，基于 <strong>StarVLA（Qwen3-VL-4B + LayerwiseFM）</strong>完成后训练，在 Franka 机械臂上实现 20Hz 实时闭环部署，并复现 RECAP + DAgger 打通「部署 → 纠偏采集 → 自动重训」数据闭环（见下方<a href="#vla">演示视频</a>）。熟悉 VLA/WAM 架构（<strong>&pi;0.5、pi、FastWAM、StarVLA</strong> 等），具备 SFT 后训练经验。
       </p>
       <p>
         我深度参与了<strong>CCF-华为胡杨林基金</strong>、<strong>CCF-百度松果基金</strong>和<strong>中国人工智能学会-华为 MindSpore 学术奖励基金</strong>等项目，相关成果发表于 <em>Neural Networks</em>、<em>IEEE Transactions on Consumer Electronics</em> 及 <em>IEEE/CAA Journal of Automatica Sinica</em> 等期刊。担任 <em>IEEE/CAA Journal of Automatica Sinica</em> (JAS) 审稿人。
@@ -93,6 +94,14 @@
     <section id="news">
       <h2><span class="icon"><i class="fas fa-bullhorn"></i></span> 动态</h2>
       <ul class="news-list">
+        <li class="news-item">
+          <span class="date">2026.10</span>
+          <span class="content">论文 <strong>Anti-Perturbation Solution of Dynamic Multilinear Quaternion Tensor Equations</strong> 被 <em>CAAI Transactions on Intelligence Technology</em> 接收。</span>
+        </li>
+        <li class="news-item">
+          <span class="date">2026.10</span>
+          <span class="content">获<strong>国家奖学金</strong>。</span>
+        </li>
         <li class="news-item">
           <span class="date">2026.09</span>
           <span class="content">论文 <strong>SAM-LA</strong> 被 <em>IEEE/CAA Journal of Automatica Sinica</em> (JAS) 正式接收。</span>
@@ -108,6 +117,27 @@
         <li class="news-item">
           <span class="date">2025</span>
           <span class="content">获评 <strong>KAUST AI Rising Star</strong>。</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="experience">
+      <h2><span class="icon"><i class="fas fa-briefcase"></i></span> 实习经历</h2>
+      <ul class="exp-list">
+        <li class="exp-item" style="display:block;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;">
+            <div>
+              <div class="exp-role">具身智能算法实习生</div>
+              <div class="exp-org">自然常数（杭州）机器人有限公司</div>
+            </div>
+            <div class="exp-date">2026.09 &mdash; 至今</div>
+          </div>
+          <ul style="margin:10px 0 2px 18px;font-size:14px;color:var(--text-light);line-height:1.7;">
+            <li>围绕柔性物体堆叠、桌面物品收纳等场景开展工业化落地，覆盖遥操作数采、VLA/WAM 后训练、Franka 真机部署及失败数据回流。</li>
+            <li>自研基于 pylibfranka 的免实时内核遥操作采集 SDK，实现 20Hz 多视角 RGB、本体状态与末端位姿同步记录（LeRobot v3）。</li>
+            <li>完成 VLA/WAM 后训练与边缘端闭环部署，采用异步推理与 action chunk 平滑；在单次推理 115ms 下保持 20Hz 连续控制，并跑通基础、RTC、TTC 三版异步方案，现有测试口径下速度提升约 1.5 倍。</li>
+            <li>搭建 Agent 奖励生成 &rarr; RLinf 训练消费链路，新增 <code>container_distance</code> / <code>container_reach</code> 奖励信号及单元测试，为机器人任务自动奖励设计与重训闭环提供工程支撑。</li>
+          </ul>
         </li>
       </ul>
     </section>
@@ -325,6 +355,11 @@
           <div class="project-desc"><strong>项目负责人。</strong>独立撰写项目申请书，独立承担全部研究工作。</div>
         </li>
         <li class="project">
+          <div class="project-title">大模型泛化与优化机理研究</div>
+          <div class="project-meta">企业合作项目 | 35 万元</div>
+          <div class="project-desc"><strong>项目负责人。</strong>独立完成选题、方案、实验及申请—中期—结项验收全流程；GPT-2 训练损失降低 10.8%、困惑度降低 14.1%，完成 PaddlePaddle / MindSpore 跨框架复现，并形成论文与开源代码。</div>
+        </li>
+        <li class="project">
           <div class="project-title">微分方程诠释的大模型泛化和鲁棒性研究</div>
           <div class="project-meta">CCF-华为胡杨林基金理论计算机科学专项 | 11 万元 | 2024.10 &mdash; 2025.10</div>
           <div class="project-desc">主要参与人。参与核心研究，利用神经微分方程（Neural ODEs）解释并改进基础模型的泛化性与鲁棒性。</div>
@@ -396,7 +431,7 @@
         </div>
         <div class="misc-card">
           <h3><i class="fas fa-tools" style="color:var(--accent);margin-right:6px;"></i> 技术能力</h3>
-          <p>Python / PyTorch / Linux；VLA 与策略架构（StarVLA、OpenVLA）；SFT 后训练；Franka 机械臂真机部署与遥操作（自研数采 SDK）。</p>
+          <p>Python / PyTorch / Linux；VLA 与策略架构（StarVLA、FastWAM、&pi;0.5、OpenVLA）；SFT / RL 后训练（RLinf）；LeRobot 数据管线；Franka 机械臂真机部署与遥操作（自研数采 SDK）；边缘端异步推理（RTC / TTC）。</p>
         </div>
       </div>
     </section>
